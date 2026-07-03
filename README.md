@@ -52,36 +52,6 @@ wesafe/
 └── build.gradle.kts / settings.gradle.kts
 ```
 
-## Getting Started
-
-### Prerequisites
-
-- Android Studio (Koala or newer recommended)
-- JDK 11
-- A Firebase project with **Phone Authentication** and **Firestore** enabled
-- A physical device or emulator with SIM/SMS capability to test the SOS feature (emulators can simulate SMS but won't deliver real texts)
-
-### Setup
-
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/<your-username>/wesafe.git
-   cd wesafe
-   ```
-
-2. **Add your Firebase config**
-   This repo does not include `google-services.json` since it contains project-specific keys. Create your own Firebase project at the [Firebase Console](https://console.firebase.google.com/), enable **Phone** sign-in under Authentication and **Firestore**, register an Android app with package name `com.sneha.wesafe`, download the generated `google-services.json`, and place it at:
-   ```
-   app/google-services.json
-   ```
-   A template with the expected fields is provided at `app/google-services.json.example`.
-
-3. **Open in Android Studio**
-   Open the project root, let Gradle sync, and run on an emulator or device (minSdk 26+).
-
-4. **Permissions**
-   The app requests SMS, fine/coarse/background location, foreground service, and notification permissions at runtime. All must be granted for shake-detection SOS and location sharing to work.
-
 ## How SOS Works
 
 `SosService` runs as a foreground service and listens to the device accelerometer. When shake intensity crosses a threshold for a configurable number of consecutive shakes (set in SOS Settings), it fetches the current GPS location and sends an SMS — with a Google Maps link to that location — to every contact marked as an SOS contact in the Friends list.

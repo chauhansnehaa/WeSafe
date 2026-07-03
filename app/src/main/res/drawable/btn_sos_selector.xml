@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Disabled state -->
+    <item android:state_enabled="false" android:drawable="@drawable/btn_sos_disabled" />
+
+    <!-- Enabled state -->
+    <item android:state_enabled="true" android:drawable="@drawable/btn_sos_enabled" />
+
+</selector>

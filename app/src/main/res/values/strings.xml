@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">wesafe</string>
+    <string name="otp_message">A 6 digit OTP has been sent to your registered mobile number</string>
+
+    <string-array name="shake_counts">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+</resources>
